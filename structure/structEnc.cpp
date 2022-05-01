@@ -3,16 +3,21 @@
 // this is one way to achieve encapsulation using structure
 struct book
 {
+private:
     int bookid;
     char title[20];
     float price;
 
+public:
     void input()
     {
         std::cout << "Enter bookid, title and price";
         std::cin.get(title, 20);
         std::cin >> bookid;
         std::cin >> price;
+
+        if (bookid < 0)
+            bookid = -bookid;
     }
 
     void display()
